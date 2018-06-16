@@ -7,7 +7,7 @@
 
                 <div class="header__logo">
                 
-                        <h1 style="color: white">Fixed Gear Medellin</h1>
+                        <h1 style="color: white">Everything About Bicycles</h1>
                  
                 </div> <!-- end header__logo -->
 
@@ -171,9 +171,11 @@
                         <div class="entry__header">
                             
                             <div class="entry__date">
+                                
                                 <a href="single-standard.html"><%= question.created_at.strftime('%m/%d/%Y') %></a>
                             </div>
-                            <h1 class="entry__title"><a href="single-standard.html"><%= question.title %></a></h1>
+                            <%= link_to question.title, question, :class => "entry__title"  %>
+                            
                             
                         </div>
                         <div class="entry__excerpt">
@@ -277,11 +279,3 @@
     </div> 
 
 
-    <!-- Java Script
-    ================================================== -->
-    
-    <%= javascript_include_tag 'plugins'%>
-    <%= javascript_include_tag 'main'%>
-    <%= javascript_include_tag 'jquery321.min.js'%>
-    
-    <%# <script src="js/jquery-3.2.1.min.js"></script> %>
