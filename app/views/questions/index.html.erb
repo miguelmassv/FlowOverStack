@@ -1,150 +1,3 @@
-   <!-- pageheader
-    ================================================== -->
-    <section class="s-pageheader s-pageheader--home">
-
-        <header class="header">
-            <div class="header__content row">
-
-                <div class="header__logo">
-                
-                        <h1 style="color: white">Everything About Bicycles</h1>
-                 
-                </div> <!-- end header__logo -->
-
-                <ul class="header__social">
-                    <li>
-                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                    </li>
-                </ul> <!-- end header__social -->
-
-                <a class="header__search-trigger" href="#0"></a>
-
-                <div class="header__search">
-
-                    <form role="search" method="get" class="header__search-form" action="#">
-                        <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
-        
-                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
-
-                </div>  <!-- end header__search -->
-
-
-                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-
-                <nav class="header__nav-wrap">
-
-                    <h2 class="header__nav-heading h6">Site Navigation</h2>
-
-                    <ul class="header__nav">
-                        <li class="current"><a href="index.html" title="">Home</a></li>
-                        <li><a href="single-standard.html" title="">About Us</a></li>
-                        
-                        <li><a href="style-guide.html" title="">Log in</a></li>
-                        <li><a href="about.html" title="">Sign Up</a></li>
-
-                    </ul> <!-- end header__nav -->
-
-                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-
-                </nav> <!-- end header__nav-wrap -->
-
-            </div> <!-- header-content -->
-        </header> <!-- header -->
-
-
-        <div class="pageheader-content row">
-            <div class="col-full">
-
-                <div class="featured">
-
-                    <div class="featured__column featured__column--big">
-                        <div class="entry" style="background-image:url('<%= @questions[-1].image_url %>')">
-                            
-                            <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><%= @questions[-1].categories.last[:name] %></a></span>
-
-                                <h1><a href="#0" title=""><%= @questions[-1].title %></a></h1>
-
-                                <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/user-03.jpg" alt="">
-                                    </a>
-
-                                    <ul class="entry__meta">
-                                        <li><a href="#0">Miguel Mass</a></li>
-                                        <li><%= @questions[-1].created_at.strftime('%m/%d/%Y') %></li>
-                                    </ul>
-                                </div>
-                            </div> <!-- end entry__content -->
-                            
-                        </div> <!-- end entry -->
-                    </div> <!-- end featured__big -->
-
-                    <div class="featured__column featured__column--small">
-
-                        <div class="entry" style="background-image:url('<%= @questions[-2].image_url %>');">
-                            
-                            <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><%= @questions[-2].categories.last[:name] %></a></span>
-
-                                <h1><a href="#0" title=""><%= @questions[-2].title %></a></h1>
-
-                                <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/user-03.jpg" alt="">
-                                    </a>
-
-                                    <ul class="entry__meta">
-                                        <li><a href="#0">santi</a></li>
-                                        <li><%= @questions[-2].created_at.strftime('%m/%d/%Y') %></li>
-                                    </ul>
-                                </div>
-                            </div> <!-- end entry__content -->
-                          
-                        </div> <!-- end entry -->
-
-                        <div class="entry" style="background-image:url('<%= @questions[-3].image_url %>');">
-
-                            <div class="entry__content">
-                                <span class="entry__category"><a href="#0"><%= @questions[-3].categories.last[:name] %></a></span>
-
-                                <h1><a href="#0" title=""><%= @questions[-3].title %></a></h1>
-
-                                <div class="entry__info">
-                                    <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/user-03.jpg" alt="">
-                                    </a>
-
-                                    <ul class="entry__meta">
-                                        <li><a href="#0">juan</a></li>
-                                        <li><%= @questions[-3].created_at.strftime('%m/%d/%Y') %></li>
-                                    </ul>
-                                </div>
-                            </div> <!-- end entry__content -->
-
-                        </div> <!-- end entry -->
-
-                    </div> <!-- end featured__small -->
-                </div> <!-- end featured -->
-
-            </div> <!-- end col-full -->
-        </div> <!-- end pageheader-content row -->
-
-    </section> <!-- end s-pageheader -->
 
 
     <!-- s-content
@@ -171,16 +24,23 @@
                         <div class="entry__header">
                             
                             <div class="entry__date">
-                                
+                                <div class="col-sm-10 text-left ceropad">
                                 <a href="single-standard.html"><%= question.created_at.strftime('%m/%d/%Y') %></a>
+                                </div>
+                                <div class="col-sm-2 text-left">
+                                <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_question_path(question)%>
+                                <%= link_to "<i class='fas fa-eraser'></i>".html_safe, question, method: :delete, data: { confirm: "are you sure?" } %>
+                                
+                            
                             </div>
-                            <%= link_to question.title, question, :class => "entry__title"  %>
+                            </div>
+                            <%= link_to question.title.capitalize, question, :class => "entry__title"  %>
                             
                             
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                                <%= question.description %>
+                                <%= question.description[0, 150] %> ...
                             </p>
                         </div>
                         <div class="entry__meta">
@@ -202,80 +62,3 @@
 
 
     </section> <!-- s-content -->
-
-
-    <!-- s-footer
-    ================================================== -->
-    <footer class="s-footer">
-
-        <div class="s-footer__main">
-            <div class="row">
-                
-                <div class="col-two md-four mob-full s-footer__sitelinks">
-                        
-                    <h4>Quick Links</h4>
-
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Home</a></li>
-                        <li><a href="#0">Blog</a></li>
-                        <li><a href="#0">Styles</a></li>
-                        <li><a href="#0">About</a></li>
-                        <li><a href="#0">Privacy Policy</a></li>
-                    </ul>
-
-                </div> <!-- end s-footer__sitelinks -->
-
-               
-                <div class="col-two md-four mob-full s-footer__social">
-                        
-                    <h4>Social</h4>
-
-                    <ul class="s-footer__linklist">
-                        <li><a href="#0">Facebook</a></li>
-                        <li><a href="#0">Instagram</a></li>
-                        <li><a href="#0">Twitter</a></li>
-                        <li><a href="#0">Pinterest</a></li>
-                        <li><a href="#0">Google+</a></li>
-                        <li><a href="#0">LinkedIn</a></li>
-                    </ul>
-
-                </div> <!-- end s-footer__social -->
-
-
-
-            </div>
-        </div> <!-- end s-footer__main -->
-
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Philosophy 2018</span> 
-                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
-                    </div>
-
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end s-footer__bottom -->
-
-    </footer> <!-- end s-footer -->
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div> 
-
-

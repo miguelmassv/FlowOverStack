@@ -19,6 +19,7 @@ end
   gem 'turbolinks', '~> 5'
   gem 'jbuilder', '~> 2.5'
  gem 'sprockets', '3.6.3'
+gem "rename"
   
 
 group :development, :test do

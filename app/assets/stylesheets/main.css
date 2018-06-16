@@ -141,7 +141,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 h5, .h5, h6, .h6 {
-   margin-top: 4.2rem;
+   
    margin-bottom: 1.5rem;
 }
 
@@ -2443,6 +2443,7 @@ html.cl-loaded .featured {
    animation-duration: 2s;
    -webkit-animation-name: fadeIn;
    animation-name: fadeIn;
+   animation-fill-mode: forwards; 
 }
 
 html.no-csstransitions .featured {
@@ -3483,10 +3484,14 @@ footer h4::after {
 .s-content__media {
    padding: 0;
    margin-top: 4.8rem;
+   
 }
 
 .s-content__media img {
-   vertical-align: bottom;
+   
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .s-content__media, .s-content__post-thumb {
@@ -3837,7 +3842,11 @@ footer h4::after {
    padding: 8.4rem 0 9rem;
    margin-top: 10.2rem;
 }
-
+.comments-wrap-new {
+    background-color: #e5e5e5;
+    padding: 8.4rem 0 9rem;
+    
+ }
 /* comments
  * -------------------------------------------------- */
 #comments {
@@ -3871,7 +3880,7 @@ footer h4::after {
 
 .comment__avatar {
    position: absolute;
-   left: 0;
+   margin-left: -90px;
    display: block;
    height: 6rem;
    width: 6rem;
@@ -4014,7 +4023,7 @@ footer h4::after {
 }
 
 #map-wrap .gm-style label {
-   width: auto;
+   
    display: inline;
 }
 

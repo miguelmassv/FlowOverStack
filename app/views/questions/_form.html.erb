@@ -1,0 +1,57 @@
+<!-- comments
+        ================================================== -->
+<div class="comments-wrap-new">
+
+    <div id="comments" class="row">
+        <div class="col-full">
+
+            
+
+
+            <!-- respond
+                    ================================================== -->
+            <div class="respond">
+
+                <h3 class="h2">Ask Question</h3>
+
+                <%= form_for @question do |q| %>
+                    <fieldset>
+                
+                        <div class="form-field">
+                        <%= q.text_field :title, class: "full-width", placeholder: "Title" %>
+                        </div>
+
+                        <div class="form-field">
+                             <%= q.text_field :image_url, class: "full-width", placeholder: "Url Image" %>
+                        </div>
+
+                        <div class="message form-field">
+                            <%= q.text_area :description, class: "full-width", placeholder: "Description" %>
+                        </div><br>
+                        <p  style="color:grey;">Categories</p>
+                        <%= q.collection_check_boxes :category_ids, Category.all, :id, :name  do |c| %>
+                            <div class="checkbox" >
+                            <%= c.label do %>
+                            <%= c.check_box  %> <%= c.object.name %>
+                            <% end %>
+                            </div>
+                        <% end %> 
+                        <br>
+
+                        
+                        <%= q.submit class: "submit btn--primary btn--large full-width" %>                
+
+                    </fieldset>
+                <% end %>
+                <!-- end form -->
+
+            </div>
+            <!-- end respond -->
+
+        </div>
+        <!-- end col-full -->
+
+    </div>
+    <!-- end row comments -->
+</div>
+<!-- end comments-wrap -->

@@ -41,6 +41,7 @@
  *  github.com/necolas/normalize.css
  *
  * ------------------------------------------------------------------- */
+ 
 html {
    font-family: sans-serif;
    line-height: 1.15;
@@ -428,7 +429,7 @@ textarea {
  * -------------------------------------- */
 [class*="col-"] {
    float: left;
-   padding: 0 20px;
+   padding: 0px;
 }
 
 [class*="col-"] + [class*="col-"].end {
